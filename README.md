@@ -1,6 +1,6 @@
 # JavaScript
 
-## Recordando o básico do JavaScript puro para poder desenvolver um código melhor no React, React Native e Node.js
+## Remembering the basics of pure JavaScript to be able to develop better code in React, React Native and Node.js
 
 #### [Skylab RocketSeat](https://skylab.rocketseat.com.br/)
 
