@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renderizando</title>
+</head>
+<body>
+    <div id="app">
+        <ul></ul>
+    </div>
+    
+    <input type="text" name="text" id="text" />
+    <button type="submit">Adicionar</button>
+    
+    <script>
+        const listElement = document.querySelector('#app ul');
+        const inputElement = document.querySelector('#app input');
+        const buttonlement = document.querySelector('#app button');
+
+        const todos = [
+            'Fazer café',
+            'Estudar',
+            'Acessar'
+        ];
+
+        function renderTodos() {
+            for (todo of todos) {
+                let todoElement = document.createElement('li');
+                let todoText = document.createTextNode(todo);
+
+                todoElement.appendChild(todoText);
+                listElement.appendChild(todoElement);
+            }
+        }
+
+        renderTodos();
+    </script>
+</body>
+</html>

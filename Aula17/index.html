@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvando no storage</title>
+</head>
+<body>
+    <div id="app">
+        <ul></ul>
+        
+        <input type="text" name="text" id="text" />
+        <button>Adicionar</button>
+    </div>
+    
+    <script>
+        const listElement = document.querySelector('#app ul');
+        const inputElement = document.querySelector('#app input');
+        const buttonElement = document.querySelector('#app button');
+
+        const todos = JSON.parse(localStorage.getItem('key_list')) || [];
+
+        function renderTodos() {
+            listElement.innerHTML = '';
+            for (todo of todos) {
+                // Add lista de elementos
+                let todoElement = document.createElement('li');
+                let todoText = document.createTextNode(todo);
+                todoElement.appendChild(todoText);
+                listElement.appendChild(todoElement);
+
+                // Add link excluir
+                let linkElement = document.createElement('a');
+                let linkText = document.createTextNode('Excluir');
+                linkElement.appendChild(linkText);
+                linkElement.setAttribute('href', '#');
+                todoElement.appendChild(linkElement);
+
+                // Localizar posição do elemento dentro da lista
+                let position = todos.indexOf(todo);
+                linkElement.setAttribute('onclick', 'deleteTodo('+ position +')');
+            }
+        }
+
+        renderTodos();
+
+        // Recupera o valor do input e add na lista de elementos
+        function addTodo() {
+            let todoText = inputElement.value;
+
+            todos.push(todoText);
+            inputElement.value = '';
+            renderTodos();
+            saveToStorage();
+        }
+
+        buttonElement.onclick = addTodo;
+
+        // Deleta elementos da lista de acordo com sua posição
+        function deleteTodo(position) {
+            todos.splice(position, 1);
+            renderTodos();
+            saveToStorage();
+        }
+
+        // Salvando elementos da lista no Storage
+        function saveToStorage() {
+            localStorage.setItem('key_list', JSON.stringify(todos));
+        }
+    </script>
+</body>
+</html>

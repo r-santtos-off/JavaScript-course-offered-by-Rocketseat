@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lidando com Elementos</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        // Criar elemento
+        const linkElement = document.createElement('a');
+        linkElement.setAttribute('href', 'https://analistacode.com');
+
+        // Add texto dentro do elemento
+        const textElement = document.createTextNode('site');
+        linkElement.appendChild(textElement);
+
+        // Add elemento dentro do body onde tem uma tag APP
+        const containerElement = document.querySelector('#app');
+        containerElement.appendChild(linkElement);
+    </script>
+</body>
+</html>

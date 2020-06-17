@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisições Ajax</title>
+</head>
+<body>
+
+
+    <script>
+        const requestHttp = new XMLHttpRequest();
+
+        requestHttp.open('GET', 'https://api.github.com/users/r-santtos');
+        requestHttp.send(null);
+
+        requestHttp.onreadystatechange = function() {
+            if (requestHttp.readyState === 4) {
+                console.log(JSON.parse(requestHttp.responseText));
+            }
+        }
+    </script>
+</body>
+</html>

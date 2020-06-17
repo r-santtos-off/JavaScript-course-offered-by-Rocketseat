@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores lógicos AND, OR, NOT</title>
+</head>
+<body>
+    <script>
+        const sexo = 'M', idade = 30;
+
+        // Operador Lógico AND
+        if (sexo === 'M'  && idade >= 30) {
+            console.log('Sexo é masculino (e = (AND / &&)) idade é maior ou igual a 30');
+        }
+
+        // Operador Lógico OR
+        if (sexo === 'M'  || idade >= 30) {
+            console.log('Sexo é masculino (ou = (OR / ||)) idade é maior ou igual a 30');
+        }
+
+        // Operador Lógico NOT
+        if (sexo !== 'F') {
+            console.log('Verifica se a variavel SEXO (não = (NOT / !==) é igual M)');
+        }
+    </script>
+</body>
+</html>

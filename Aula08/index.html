@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervalo e timeout</title>
+</head>
+<body>
+    <script>
+        //setInterval
+        function contagemSegundos() {
+            console.log('Essa frase se repete a cada 1 segundo');
+        }
+        setInterval(contagemSegundos, 1000);
+
+        //setTimeOut
+        function comAtraso() {
+            console.log('Essa frase apareceu após 5 segundos dela ter sido chamada');
+        }
+        setTimeout(comAtraso, 5000);
+    </script>
+</body>
+</html>

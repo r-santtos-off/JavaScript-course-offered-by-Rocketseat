@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição ternária</title>
+</head>
+<body>
+    <script>
+        const nome = "Ricardo";
+
+        //Forma padrão
+        if (nome === "Ricardo") {
+            console.log('Nome é igual e do mesmo tipo');
+        } else {
+            console.log('Nome é igual, mas não do mesmo tipo ou é do mesmo tipo, mas o nome não é igual');
+        }
+
+        //Forma ternaria
+        const ternaria = (nome === "Ricardo") ? 'True' : 'False';
+        console.log(ternaria);
+    </script>
+</body>
+</html>

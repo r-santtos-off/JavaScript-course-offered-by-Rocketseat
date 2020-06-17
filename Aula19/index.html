@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        const myPromise = function() {
+            return new Promise(function(resolve, reject) {
+                const requestHttp = new XMLHttpRequest();
+                requestHttp.open('GET', 'https://api.github.com/users/r-santtos');
+                requestHttp.send(null);
+
+                requestHttp.onreadystatechange = function() {
+                    if (requestHttp.readyState === 4) {
+                        if (requestHttp.status === 200) {
+                            resolve(JSON.parse(requestHttp.responseText));
+                        } else {
+                            reject('Erro');
+                        }
+                    }
+                }
+            });
+        }
+
+        myPromise()
+          .then(function(response) {
+            console.log(response);
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+    </script>
+</body>
+</html>
